@@ -4,9 +4,22 @@
     "slug": "messi-cristiano-live",
     "version": "1.0.0",
     "orientation": "portrait",
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "android": {
       "package": "com.example.messicristianolive"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a4f1c238-b89c-48fd-8c35-99ff42fb608c"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.example.messicristianolive",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     }
   }
 }
