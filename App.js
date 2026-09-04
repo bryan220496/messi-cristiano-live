@@ -73,7 +73,7 @@ export default function App(){
 
     {tab==='battle' && <>
       <View style={styles.top}><View style={[styles.dot,{backgroundColor:connected?'#2be27c':'#f0aa27'}]}/><Text style={styles.status}>{connected?'LIVE conectado':'Modo demo / sin servidor'}</Text><Text style={styles.timer}>{timer}</Text></View>
-      <View style={styles.artBox}><Image source={require('./game-art.png')} style={styles.art}/></View>
+      <View style={styles.artBox}><Image source={require('./game-art.jpg')} style={styles.art}/></View>
       <Animated.View style={[styles.scoreRow,{transform:[{scale:pulse}]}]}>
         <ScoreCard title="MESSI" score={game.messi} side="messi" pct={pctM}/><Text style={styles.vs}>VS</Text><ScoreCard title="CRISTIANO" score={game.cristiano} side="cristiano" pct={pctC}/>
       </Animated.View>
