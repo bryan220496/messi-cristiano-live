@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "Messi vs Cristiano LIVE",
+    "slug": "messi-cristiano-live",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.example.messicristianolive"
+    }
+  }
+}
