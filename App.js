@@ -26,10 +26,10 @@ export default function App(){
 
   const reactToGift = (giftName, quantity=1, user='Espectador') => {
     const rule = GIFT_RULES.find(x=>x.name.toLowerCase()===String(giftName).toLowerCase());
-    if(!rule || game.winner || !running) return;
+    if(!rule || !runningRef.current) return;
     setGame(prev=>{
       const next={...prev, events:[{user,gift:giftName,quantity,time:new Date().toLocaleTimeString()},...prev.events].slice(0,20),last:`${user}: ${giftName} ×${quantity}`};
-      if(rule.win) return {...next,winner:rule.player};
+      if(prev.winner) return prev; if(rule.win) return {...next,winner:rule.player};
       next[rule.player] += rule.points*quantity;
       return next;
     });
@@ -59,7 +59,7 @@ export default function App(){
       }catch{setConnected(false)}
     };
     connect(); return()=>{cancelled=true; if(reconnect.current)clearTimeout(reconnect.current); if(ws.current)ws.current.close()};
-  },[serverUrl,autoReconnect,running,game.winner]);
+  },[serverUrl,autoReconnect]);
 
   const max=Math.max(game.messi,game.cristiano,1);
   const pctM=game.messi/max*100, pctC=game.cristiano/max*100;
